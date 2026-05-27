@@ -1,5 +1,38 @@
 # Aligo 智能旅行助手
 
+## 项目结构说明
+
+当前项目采用 Python Agent Runtime 与 Go Backend 并行演进的组织方式：
+
+```text
+TravelAgent/
+  agents/                 # Python 核心智能体
+  context/                # Python 短期/长期记忆管理
+  utils/                  # Python 通用工具
+  travel_agent/           # 标准 Python 包兼容入口，支持 python -m travel_agent
+  backend/                # Go + Gin + MySQL + Redis 后端服务
+  data/                   # 本地模型、记忆文件和运行数据
+  docs/                   # 项目设计、后端计划和结构说明
+  scripts/                # 启动、迁移和开发辅助脚本
+  tests/                  # 后续测试目录
+  cli.py                  # 旧版兼容 CLI 入口
+  config.py               # 旧版兼容应用配置
+  config_agentscope.py    # AgentScope 初始化配置
+```
+
+文档统一迁移到 `docs/`
+常用脚本：
+
+```powershell
+.\scripts\install_python_deps.ps1
+.\scripts\start_cli.ps1
+.\scripts\start_backend.ps1
+.\scripts\backend_build.ps1
+.\scripts\migrate_memory_json.ps1 -BaseUrl http://127.0.0.1:8080
+```
+
+Python 包结构化采用渐进策略：当前 `travel_agent/` 先作为兼容入口导出旧模块能力，后续再逐步把 `agents/`、`context/`、`utils/` 和配置模块迁入标准包内。
+
 基于**豆包大模型**和**AgentScope框架**的多智能体旅行规划系统，采用Plan-and-Execute架构，实现智能意图识别、两层记忆系统、RAG知识库、联网搜索和优先级并行调度。
 
 ## ✨ 核心亮点

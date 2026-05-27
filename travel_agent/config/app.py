@@ -1,0 +1,5 @@
+"""应用配置兼容入口。"""
+
+from config import LLM_CONFIG, RAG_CONFIG, RESILIENCE_CONFIG, SYSTEM_CONFIG
+
+__all__ = ["LLM_CONFIG", "RAG_CONFIG", "RESILIENCE_CONFIG", "SYSTEM_CONFIG"]
