@@ -1,6 +1,7 @@
 # Aligo 智能旅行助手
 
-基于**豆包大模型**和**AgentScope框架**的多智能体旅行规划系统，采用Plan-and-Execute架构，实现智能意图识别、两层记忆系统、RAG知识库、联网搜索和优先级并行调度。
+基于**AgentScope1.0框架**的多智能体旅行规划系统，采用Plan-and-Execute架构，实现智能意图识别、两层记忆系统、RAG知识库、联网搜索和优先级并行调度。
+该项目不再维护。**AgentScope2.0框架** 已经发布，官网说明这是一次破坏式更新。后续会主要维护 AgentScope-2.0-DevOps-Copilot 项目 https://github.com/lsl1016/AgentScope-2.0-DevOps-Copilot
 
 ## ✨ 核心亮点
 
